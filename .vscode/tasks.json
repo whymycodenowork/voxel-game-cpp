@@ -1,0 +1,38 @@
+// .vscode/tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "cppbuild",
+        "label": "C/C++: g++.exe build active file",
+        "command": "C:/msys64/ucrt64/bin/g++.exe",
+        "args": [
+          "-fdiagnostics-color=always",
+          "-g",
+  
+          // tell gcc where your headers live:
+          "-I${workspaceFolder}/include",  
+  
+          // your source:
+          "${file}",
+  
+          // output exe beside your .cpp:
+          "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe",
+  
+          // link against glfw + opengl + windows GUI:
+          "-L", "C:/msys64/ucrt64/lib",  
+          "-lglfw3",                     
+          "-lopengl32",                  
+          "-lgdi32"                      
+        ],
+        "options": {
+          // compile from your project root so -I${workspaceFolder}/include works:
+          "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": ["$gcc"],
+        "group": { "kind": "build", "isDefault": true },
+        "detail": "task updated to include -I and link libs"
+      }
+    ]
+  }
+  

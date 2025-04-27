@@ -1,7 +1,10 @@
-#include "include/GLFW/glfw3.h"
+#include <include/GLFW/glfw3.h>
+#include <iostream>
+#include <GL/gl.h>
 
 int main(void)
 {
+    std::cout << "Hello, World!";
     GLFWwindow* window;
 
     /* Initialize the library */
